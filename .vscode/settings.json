@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "radix.C": "cpp",
+        "ctype.h": "c"
+    }
+}

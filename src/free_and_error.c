@@ -1,30 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_and_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/29 16:02:40 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 12:58:39 by dev              ###   ########.fr       */
+/*   Created: 2025/04/11 20:48:07 by dev               #+#    #+#             */
+/*   Updated: 2025/04/12 12:59:54 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	free_stack(t_stack **head)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*tmp;
 
-	if (ac < 2)
-		return (0);
-	check_input(ac, av);
-	stack_a = init_list(ac, av);
-	stack_b = NULL;
-	index_stack(stack_a);
-	sort_stack(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-	return (0);
+	while (*head)
+	{
+		tmp = *head;
+		*head = (*head)->next;
+		free(tmp);
+	}
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+		free(split[i++]);
+	free(split);
+}
+
+void	error_msg(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write (1, &str[i], 1);
+		i++;
+	}
+	write (1, "\n", 1);
+	exit (0);
 }
