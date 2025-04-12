@@ -6,7 +6,7 @@
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:42:12 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 12:52:56 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/12 19:06:56 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
 
@@ -29,10 +28,12 @@ typedef struct s_stack
 //check_input.c
 int		has_duplicates(int *nums, int size);
 int		is_valid_number(char *str);
-void	check_input(int argc, char **argv);
+void	fill_numbers_from_argument(char *arg, int *nums, int *index);
+void	count_total_numbers(int ac, char **av, int *count);
+void	check_input(int ac, char **av);
 
 //initialize.c
-t_stack	*init_list(int argc, char **argv);
+t_stack	*init_list(int ac, char **av);
 void	index_stack(t_stack *stack);
 
 //instructions

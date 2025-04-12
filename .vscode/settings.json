@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "radix.C": "cpp",
-        "ctype.h": "c"
+        "ctype.h": "c",
+        "stdio.h": "c"
     }
 }
