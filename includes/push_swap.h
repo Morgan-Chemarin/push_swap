@@ -6,7 +6,7 @@
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:42:12 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 19:06:56 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/12 20:34:02 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack
 //check_input.c
 int		has_duplicates(int *nums, int size);
 int		is_valid_number(char *str);
-void	fill_numbers_from_argument(char *arg, int *nums, int *index);
+int		fill_numbers_from_argument(char *arg, int *nums, int *index);
 void	count_total_numbers(int ac, char **av, int *count);
 void	check_input(int ac, char **av);
 
@@ -58,7 +58,7 @@ int		count_nodes(t_stack *head);
 int		find_biggest(t_stack *head);
 int		find_bits(int biggest_nbr);
 int		sorted(t_stack **head);
-int		count_arg(char **array);
+int		count_nodes(t_stack *head);
 
 //sort.c
 void	sort_three(t_stack **head);

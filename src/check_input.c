@@ -6,7 +6,7 @@
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:32:02 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 19:14:03 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/12 19:41:27 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	is_valid_number(char *str)
 	return (1);
 }
 
-void	fill_numbers_from_argument(char *arg, int *nums, int *index)
+int	fill_numbers_from_argument(char *arg, int *nums, int *index)
 {
 	char	**split;
 	int		j;
@@ -63,15 +63,22 @@ void	fill_numbers_from_argument(char *arg, int *nums, int *index)
 	while (split[j])
 	{
 		if (!is_valid_number(split[j]))
-			error_msg("Error");
+		{
+			free_split(split);
+			return (0);
+		}
 		n = ft_atol(split[j]);
 		if (n < INT_MIN || n > INT_MAX)
-			error_msg("Error");
+		{
+			free_split(split);
+			return (0);
+		}
 		nums[*index] = (int)n;
 		(*index)++;
 		j++;
 	}
 	free_split(split);
+	return (1);
 }
 
 void	count_total_numbers(int ac, char **av, int *count)
@@ -113,10 +120,17 @@ void	check_input(int ac, char **av)
 		exit(EXIT_FAILURE);
 	while (i < ac)
 	{
-		fill_numbers_from_argument(av[i], nums, &index);
+		if (!fill_numbers_from_argument(av[i], nums, &index))
+		{
+			free(nums);
+			error_msg("Error");
+		}
 		i++;
 	}
 	if (has_duplicates(nums, count))
+	{
+		free(nums);
 		error_msg("Error");
+	}
 	free(nums);
 }
