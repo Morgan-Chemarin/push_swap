@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:32:02 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 19:41:27 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/13 16:17:41 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,12 @@ int	fill_numbers_from_argument(char *arg, int *nums, int *index)
 		}
 		n = ft_atol(split[j]);
 		if (n < INT_MIN || n > INT_MAX)
-		{
-			free_split(split);
-			return (0);
-		}
+			return (free_split(split), 0);
 		nums[*index] = (int)n;
 		(*index)++;
 		j++;
 	}
-	free_split(split);
-	return (1);
+	return (free_split(split), 1);
 }
 
 void	count_total_numbers(int ac, char **av, int *count)
@@ -104,29 +100,35 @@ void	count_total_numbers(int ac, char **av, int *count)
 	}
 }
 
-void	check_input(int ac, char **av)
+void	parse_and_fill(int ac, char **av, int *nums, int *index)
 {
-	int	count;
-	int	index;
-	int	*nums;
 	int	i;
 
-	count = 0;
-	index = 0;
 	i = 1;
-	count_total_numbers(ac, av, &count);
-	nums = malloc(sizeof(int) * count);
-	if (!nums)
-		exit(EXIT_FAILURE);
 	while (i < ac)
 	{
-		if (!fill_numbers_from_argument(av[i], nums, &index))
+		if (!fill_numbers_from_argument(av[i], nums, index))
 		{
 			free(nums);
 			error_msg("Error");
 		}
 		i++;
 	}
+}
+
+void	check_input(int ac, char **av)
+{
+	int	count;
+	int	index;
+	int	*nums;
+
+	count = 0;
+	index = 0;
+	count_total_numbers(ac, av, &count);
+	nums = malloc(sizeof(int) * count);
+	if (!nums)
+		exit(EXIT_FAILURE);
+	parse_and_fill(ac, av, nums, &index);
 	if (has_duplicates(nums, count))
 	{
 		free(nums);
