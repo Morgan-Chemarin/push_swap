@@ -6,7 +6,7 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:29:03 by dev               #+#    #+#             */
-/*   Updated: 2025/04/13 16:09:42 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:26:06 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,21 @@ void	index_stack(t_stack *stack)
 		}
 		current->index = index;
 		current = current->next;
+	}
+}
+
+void	parse_and_fill(int ac, char **av, int *nums, int *index)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (!fill_numbers_from_argument(av[i], nums, index))
+		{
+			free(nums);
+			error_msg("Error");
+		}
+		i++;
 	}
 }

@@ -2,6 +2,8 @@
     "files.associations": {
         "radix.C": "cpp",
         "ctype.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "variant": "c",
+        "chrono": "c"
     }
 }

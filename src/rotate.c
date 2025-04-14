@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:09:23 by dev               #+#    #+#             */
-/*   Updated: 2025/04/11 20:10:04 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/14 14:39:32 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate(t_stack **head)
+void	rotate(t_stack **stack)
 {
 	t_stack	*tail;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	tail = *head;
+	tail = *stack;
 	while (tail->next != NULL)
 		tail = tail->next;
-	tail->next = *head;
-	*head = (*head)->next;
+	tail->next = *stack;
+	*stack = (*stack)->next;
 	tail->next->next = NULL;
 }
 
-void	rotate_a(t_stack **head)
+void	rotate_a(t_stack **stack)
 {
-	rotate(head);
+	rotate(stack);
 	write (1, "ra\n", 3);
 }
 
-void	rotate_b(t_stack **head)
+void	rotate_b(t_stack **stack)
 {
-	rotate(head);
+	rotate(stack);
 	write (1, "rb\n", 3);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:32:02 by dev               #+#    #+#             */
-/*   Updated: 2025/04/13 16:17:41 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:25:05 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,22 +96,6 @@ void	count_total_numbers(int ac, char **av, int *count)
 			j++;
 		}
 		free_split(split);
-		i++;
-	}
-}
-
-void	parse_and_fill(int ac, char **av, int *nums, int *index)
-{
-	int	i;
-
-	i = 1;
-	while (i < ac)
-	{
-		if (!fill_numbers_from_argument(av[i], nums, index))
-		{
-			free(nums);
-			error_msg("Error");
-		}
 		i++;
 	}
 }

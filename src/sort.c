@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:41:01 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 20:35:55 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/14 14:28:00 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three(t_stack **head)
+void	sort_three(t_stack **stack)
 {
 	int	biggest;
 
-	biggest = find_biggest(*head);
-	if ((*head)->index == biggest)
-		rotate_a(head);
-	else if ((*head)->next->index == biggest)
-		r_rotate_a(head);
-	if ((*head)->index > (*head)->next->index)
-		swap_a(head);
+	biggest = find_biggest(*stack);
+	if ((*stack)->index == biggest)
+		rotate_a(stack);
+	else if ((*stack)->next->index == biggest)
+		r_rotate_a(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		swap_a(stack);
 }
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b)

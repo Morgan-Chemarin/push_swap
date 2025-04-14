@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:56:56 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 12:24:36 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/14 14:29:52 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	count_nodes(t_stack *head)
+int	count_nodes(t_stack *stack)
 {
 	int	i;
 
 	i = 0;
-	while (head != NULL)
+	while (stack != NULL)
 	{
-		head = head->next;
+		stack = stack->next;
 		i++;
 	}
 	return (i);
 }
 
-int	find_biggest(t_stack *head)
+int	find_biggest(t_stack *stack)
 {
 	int		big;
 	t_stack	*tmp;
 
 	big = INT_MIN;
-	tmp = head;
+	tmp = stack;
 	while (tmp)
 	{
 		if (tmp->index > big)
@@ -64,11 +64,11 @@ int	count_arg(char **array)
 	return (i);
 }
 
-int	sorted(t_stack **head)
+int	sorted(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	tmp = *head;
+	tmp = *stack;
 	while (tmp && tmp->next)
 	{
 		if (tmp->index > tmp->next->index)

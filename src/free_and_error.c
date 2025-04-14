@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   free_and_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:48:07 by dev               #+#    #+#             */
-/*   Updated: 2025/04/12 19:41:16 by dev              ###   ########.fr       */
+/*   Updated: 2025/04/14 14:29:00 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_stack(t_stack **head)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	while (*head)
+	while (*stack)
 	{
-		tmp = *head;
-		*head = (*head)->next;
+		tmp = *stack;
+		*stack = (*stack)->next;
 		free(tmp);
 	}
 }
