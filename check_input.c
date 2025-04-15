@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:32:02 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:25:05 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:42:56 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 int	has_duplicates(int *nums, int size)
 {

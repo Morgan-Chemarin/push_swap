@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:48:07 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:29:00 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:42:59 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 void	free_stack(t_stack **stack)
 {

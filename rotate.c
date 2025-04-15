@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:09:23 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:39:32 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:10 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 void	rotate(t_stack **stack)
 {

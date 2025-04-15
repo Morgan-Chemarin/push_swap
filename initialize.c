@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:29:03 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:26:06 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:02 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 t_stack	*new_node(int value)
 {

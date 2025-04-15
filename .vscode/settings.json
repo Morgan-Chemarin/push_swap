@@ -4,6 +4,7 @@
         "ctype.h": "c",
         "stdio.h": "c",
         "variant": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "push_swap.h": "c"
     }
 }

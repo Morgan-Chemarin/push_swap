@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:41:01 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:28:00 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:14 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 void	sort_three(t_stack **stack)
 {

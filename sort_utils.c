@@ -6,11 +6,11 @@
 /*   By: mchemari <mchemari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 20:56:56 by dev               #+#    #+#             */
-/*   Updated: 2025/04/14 14:29:52 by mchemari         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:43:12 by mchemari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 int	count_nodes(t_stack *stack)
 {
